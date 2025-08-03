@@ -1,4 +1,4 @@
-
+/* 🎨 Style chung cho toàn trang */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,100 +9,49 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
 }
 
+/* 📌 Tiêu đề chính (Heading H1) */
 h1 {
-    font-size: 4rem;
-    margin-bottom: 60px;
+    font-size: 4rem; /* 👉 Kích thước tiêu đề desktop */
     color: #00cec9;
+    margin-bottom: 30px;
 }
 
-.input-section, .random-section {
-    margin: 40px 0;
+/* 🔷 Phần nhập liệu và nút bấm */
+.input-section,
+.random-section {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
+/* 📌 Label hướng dẫn */
 label {
-    font-size: 2rem;
+    font-size: 3rem; /* 👉 Kích thước label desktop */
+    margin-right: 20px;
+    margin-bottom: 10px;
+    display: inline-block;
 }
 
+/* 🧾 Ô nhập mã số */
 input {
     padding: 20px;
-    font-size: 2rem;
-    width: 300px;
-    border-radius: 10px;
-    border: none;
-    text-align: center;
-}
-
-button {
-    padding: 20px 40px;
-    font-size: 2.5rem;
-    margin-left: 20px;
-    background-color: #0984e3;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #74b9ff;
-}
-
-.result {
-    margin-top: 40px;
-    font-size: 3rem;
-    font-weight: bold;
-    /*color: #55efc4;*/
-}
-
-.highlight-red {
-    color: red !important;
-  }
-
-  /* Giao diện desktop (giữ nguyên như cũ) */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
-}
-
-h1 {
-    font-size: 6rem;
-    margin-bottom: 80px;
-    color: #00cec9;
-}
-
-.input-section, .random-section {
-    margin: 40px 0;
-}
-
-label {
-    font-size: 3rem;
-    margin-right: 20px;
-}
-
-input {
-    padding: 30px;
-    font-size: 3rem;
+    font-size: 3rem; /* 👉 Kích thước chữ trong input */
     width: 400px;
     border-radius: 12px;
     border: none;
     text-align: center;
 }
 
+/* 🔘 Nút bấm */
 button {
     padding: 30px 50px;
-    font-size: 3.5rem;
+    font-size: 2rem; /* 👉 Kích thước chữ trong nút */
     margin-left: 30px;
     background-color: #0984e3;
     color: white;
@@ -115,45 +64,74 @@ button:hover {
     background-color: #74b9ff;
 }
 
+/* ✅ Kết quả hiển thị */
 .result {
-    margin-top: 60px;
-    font-size: 5rem;
+    margin-top: 30px;
+    font-size: 3rem; /* 👉 Size chữ kết quả */
     font-weight: bold;
     color: #55efc4;
+    min-height: 120px; /* 🟢 Chừa sẵn không gian hiển thị */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
+/* ❗ Tô đỏ khi cần highlight kết quả */
 .highlight-red {
     color: red !important;
 }
 
-/* 📱 Responsive cho điện thoại */
+/* ❗ Tô đỏ khi cần highlight kết quả */
+.highlight-green {
+    color: rgb(35, 185, 128) !important;
+}
+
+/* ============================= */
+/* 📱 Giao diện Responsive Mobile */
+/* ============================= */
 @media (max-width: 768px) {
+    /* 👇 Tiêu đề nhỏ hơn trên mobile */
     h1 {
-        font-size: 3rem;
-        margin-bottom: 40px;
-    }
-
-    label {
-        font-size: 2rem;
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    input {
-        width: 80%;
-        font-size: 2rem;
-        padding: 20px;
+        font-size: 2.5rem;
         margin-bottom: 20px;
     }
 
-    button {
+    /* 👇 Label mobile */
+    label {
+        font-size: 1.8rem;
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    /* 👇 Input mobile */
+    input {
+        width: 90%;
         font-size: 2rem;
-        padding: 20px 30px;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* 👇 Button mobile */
+    button {
+        width: 90%;
+        font-size: 2rem;
+        padding: 20px;
         margin: 10px 0;
     }
 
+    /* 👇 Kết quả mobile */
     .result {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        min-height: 100px;
         padding: 10px;
+    }
+
+    /* 👉 Đặt input và nút thành cột */
+    .input-section,
+    .random-section {
+        flex-direction: column;
     }
 }
