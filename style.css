@@ -1,37 +1,159 @@
 
 body {
     font-family: Arial, sans-serif;
-    padding: 40px;
-    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     text-align: center;
 }
+
 h1 {
-    color: #2c3e50;
+    font-size: 4rem;
+    margin-bottom: 60px;
+    color: #00cec9;
 }
+
 .input-section, .random-section {
-    margin: 20px auto;
+    margin: 40px 0;
 }
+
+label {
+    font-size: 2rem;
+}
+
 input {
-    padding: 10px;
-    width: 200px;
-    font-size: 16px;
+    padding: 20px;
+    font-size: 2rem;
+    width: 300px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
 }
+
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-left: 10px;
-    background-color: #3498db;
+    padding: 20px 40px;
+    font-size: 2.5rem;
+    margin-left: 20px;
+    background-color: #0984e3;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
 }
 button:hover {
-    background-color: #2980b9;
+    background-color: #74b9ff;
 }
+
 .result {
-    margin-top: 30px;
-    font-size: 18px;
+    margin-top: 40px;
+    font-size: 3rem;
     font-weight: bold;
-    color: #2c3e50;
+    /*color: #55efc4;*/
+}
+
+.highlight-red {
+    color: red !important;
+  }
+
+  /* Giao diện desktop (giữ nguyên như cũ) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 6rem;
+    margin-bottom: 80px;
+    color: #00cec9;
+}
+
+.input-section, .random-section {
+    margin: 40px 0;
+}
+
+label {
+    font-size: 3rem;
+    margin-right: 20px;
+}
+
+input {
+    padding: 30px;
+    font-size: 3rem;
+    width: 400px;
+    border-radius: 12px;
+    border: none;
+    text-align: center;
+}
+
+button {
+    padding: 30px 50px;
+    font-size: 3.5rem;
+    margin-left: 30px;
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #74b9ff;
+}
+
+.result {
+    margin-top: 60px;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #55efc4;
+}
+
+.highlight-red {
+    color: red !important;
+}
+
+/* 📱 Responsive cho điện thoại */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 40px;
+    }
+
+    label {
+        font-size: 2rem;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input {
+        width: 80%;
+        font-size: 2rem;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        font-size: 2rem;
+        padding: 20px 30px;
+        margin: 10px 0;
+    }
+
+    .result {
+        font-size: 2.5rem;
+        padding: 10px;
+    }
 }
