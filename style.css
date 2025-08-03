@@ -8,9 +8,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    justify-content: flex-start; /* ✅ Đẩy nội dung lên đầu */
+    height: 100vh;
     text-align: center;
+    padding-top: 20px; /* ✅ Khoảng cách nhẹ phía trên */
 }
 
 /* 📌 Tiêu đề chính (Heading H1) */
@@ -23,7 +24,7 @@ h1 {
 /* 🔷 Phần nhập liệu và nút bấm */
 .input-section,
 .random-section {
-    margin: 20px 0;
+    margin: 10px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,7 +96,7 @@ button:hover {
     /* 👇 Tiêu đề nhỏ hơn trên mobile */
     h1 {
         font-size: 2.5rem;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     /* 👇 Label mobile */
@@ -108,25 +109,25 @@ button:hover {
 
     /* 👇 Input mobile */
     input {
-        width: 90%;
+        width: 80%;
         font-size: 2rem;
         padding: 15px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     /* 👇 Button mobile */
     button {
-        width: 90%;
-        font-size: 2rem;
+        width: 60%;
+        font-size: 1.2rem;
         padding: 20px;
         margin: 10px 0;
     }
 
     /* 👇 Kết quả mobile */
     .result {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         min-height: 100px;
-        padding: 10px;
+
     }
 
     /* 👉 Đặt input và nút thành cột */
