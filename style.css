@@ -59,10 +59,16 @@ button {
     border: none;
     border-radius: 12px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 button:hover {
     background-color: #74b9ff;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    background-color: #636e72;
 }
 
 /* ✅ Kết quả hiển thị */
@@ -84,9 +90,112 @@ button:hover {
     color: red !important;
 }
 
-/* ❗ Tô đỏ khi cần highlight kết quả */
+/* ❗ Tô xanh khi cần highlight kết quả */
 .highlight-green {
     color: rgb(35, 185, 128) !important;
+}
+
+/* 🎭 HIỆU ỨNG HỒI HỘP - COUNTDOWN */
+.countdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.countdown-number {
+    font-size: 6rem;
+    color: #ff6b6b;
+    font-weight: bold;
+    animation: pulse 1s infinite;
+    text-shadow: 0 0 20px #ff6b6b;
+}
+
+.countdown-text {
+    font-size: 2rem;
+    color: #ffeaa7;
+    animation: blink 0.8s infinite;
+}
+
+.randomizing-info {
+    margin-top: 20px;
+}
+
+.blur-effect {
+    filter: blur(2px);
+    opacity: 0.7;
+    animation: flicker 0.3s infinite;
+}
+
+/* 🥁 HIỆU ỨNG DRUMROLL */
+.drumroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-size: 4rem;
+    animation: shake 0.5s infinite;
+}
+
+.drumroll-text {
+    font-size: 2.5rem;
+    color: #fdcb6e;
+    animation: glow 1s infinite alternate;
+}
+
+/* 🎉 HIỆU ỨNG KẾT QUẢ CUỐI CÙNG */
+.final-result {
+    animation: slideInUp 0.8s ease-out;
+}
+
+.tada-animation {
+    animation: tada 1s ease-in-out;
+}
+
+/* 🎪 KEYFRAMES ANIMATIONS */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 0.4; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #fdcb6e; }
+    100% { text-shadow: 0 0 20px #fdcb6e, 0 0 30px #fdcb6e; }
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes tada {
+    0% { transform: scale(1); }
+    10%, 20% { transform: scale(0.9) rotate(-3deg); }
+    30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
+    40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
+    100% { transform: scale(1) rotate(0); }
 }
 
 /* ============================= */
@@ -128,12 +237,28 @@ button:hover {
     .result {
         font-size: 1.8rem;
         min-height: 100px;
-
     }
 
     /* 👉 Đặt input và nút thành cột */
     .input-section,
     .random-section {
         flex-direction: column;
+    }
+
+    /* 🎭 Responsive cho hiệu ứng */
+    .countdown-number {
+        font-size: 4rem;
+    }
+
+    .countdown-text {
+        font-size: 1.5rem;
+    }
+
+    .drumroll {
+        font-size: 2.5rem;
+    }
+
+    .drumroll-text {
+        font-size: 1.8rem;
     }
 }
