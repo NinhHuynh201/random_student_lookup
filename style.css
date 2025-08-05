@@ -95,16 +95,33 @@ button:disabled {
     color: rgb(35, 185, 128) !important;
 }
 
-/* 🎭 HIỆU ỨNG HỒI HỘP - COUNTDOWN */
-.countdown-container {
+/* 🎭 HIỆU ỨNG HỒI HỘP - COUNTDOWN LAYOUT 2 CỘT */
+.countdown-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    gap: 40px;
+}
+
+.countdown-left {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+}
+
+.students-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .countdown-number {
-    font-size: 6rem;
+    font-size: 4rem;
     color: #ff6b6b;
     font-weight: bold;
     animation: pulse 1s infinite;
@@ -112,19 +129,74 @@ button:disabled {
 }
 
 .countdown-text {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #ffeaa7;
     animation: blink 0.8s infinite;
+    margin-top: 15px;
 }
 
-.randomizing-info {
-    margin-top: 20px;
+.students-title {
+    font-size: 1.8rem;
+    color: #00cec9;
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
-.blur-effect {
-    filter: blur(2px);
+.students-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.student-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* === THAY ĐỔI: Thu nhỏ padding desktop để tránh chạm đáy === */
+    padding: 6px 12px; /* Giảm từ 8px 15px xuống 6px 12px */
+    border-radius: 8px;
+    /* === THAY ĐỔI: Thu nhỏ font size desktop === */
+    font-size: 1.2rem; /* Giảm từ 1.4rem xuống 1.2rem */
+    transition: all 0.3s ease;
+}
+
+.current-student {
+    background-color: rgba(255, 107, 107, 0.2);
+    border: 2px solid #ff6b6b;
+    animation: highlightCurrent 0.5s ease-in-out;
+}
+
+.previous-student {
+    background-color: rgba(85, 239, 196, 0.1);
+    border: 1px solid rgba(85, 239, 196, 0.3);
     opacity: 0.7;
-    animation: flicker 0.3s infinite;
+}
+
+.student-id {
+    color: #74b9ff;
+    font-weight: bold;
+    min-width: 50px;
+}
+
+.student-name {
+    color: #ff6b6b;
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.student-group {
+    color: #00b894;
+    min-width: 80px;
+    text-align: right;
+}
+
+/* 🎯 Animation cho học viên hiện tại */
+@keyframes highlightCurrent {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 /* 🥁 HIỆU ỨNG DRUMROLL */
@@ -132,13 +204,13 @@ button:disabled {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    font-size: 4rem;
+    gap: 10px; /* Giảm từ 15px xuống 10px */
+    font-size: 3rem; /* Giảm từ 4rem xuống 3rem */
     animation: shake 0.5s infinite;
 }
 
 .drumroll-text {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Giảm từ 2.5rem xuống 2rem */
     color: #fdcb6e;
     animation: glow 1s infinite alternate;
 }
@@ -146,6 +218,11 @@ button:disabled {
 /* 🎉 HIỆU ỨNG KẾT QUẢ CUỐI CÙNG */
 .final-result {
     animation: slideInUp 0.8s ease-out;
+}
+
+.final-result .result-line {
+    font-size: 3.5rem; /* Tăng kết quả cuối cùng trên desktop */
+    margin: 5px 0;
 }
 
 .tada-animation {
@@ -235,6 +312,7 @@ button:disabled {
 
     /* 👇 Kết quả mobile */
     .result {
+        margin-top: 10px;
         font-size: 1.8rem;
         min-height: 100px;
     }
@@ -247,18 +325,82 @@ button:disabled {
 
     /* 🎭 Responsive cho hiệu ứng */
     .countdown-number {
-        font-size: 4rem;
+        /* === THAY ĐỔI: Thu nhỏ hơn nữa số countdown === */
+        font-size: 1.8rem; /* Giảm từ 2.2rem xuống 1.8rem */
     }
 
     .countdown-text {
-        font-size: 1.5rem;
+        /* === THAY ĐỔI: Thu nhỏ text countdown === */
+        font-size: 0.9rem; /* Giảm từ 1rem xuống 0.9rem */
+        margin-top: 5px; /* Giảm margin từ 15px xuống 5px */
     }
 
     .drumroll {
-        font-size: 2.5rem;
+        font-size: 2rem; /* Giảm từ 2.5rem */
     }
 
     .drumroll-text {
-        font-size: 1.8rem;
+        font-size: 1.4rem; /* Giảm từ 1.8rem */
+    }
+
+    /* 📱 Kết quả cuối cùng mobile - GIỮ NGUYÊN SIZE LỚN */
+    .final-result .result-line {
+        font-size: 1.8rem !important; /* Tăng lại từ 1.4rem lên 1.8rem như ban đầu */
+    }
+
+    /* 📱 Layout mobile - chuyển về dạng cột */
+    .countdown-layout {
+        flex-direction: column;
+        /* === THAY ĐỔI: Thu hẹp khoảng cách giữa countdown và danh sách === */
+        gap: 8px; /* Giảm từ 15px xuống 8px */
+        align-items: center;
+        /* === THAY ĐỔI: Thu nhỏ khung render trên mobile === */
+        max-width: 95%; /* Tăng từ 90% lên 95% để tận dụng không gian */
+        margin: 0 auto; /* Căn giữa */
+    }
+
+    .countdown-left,
+    .students-right {
+        width: 100%;
+        align-items: center;
+    }
+
+    .students-right {
+        align-items: flex-start;
+    }
+
+    /* === THAY ĐỔI: Thu nhỏ title và items để vừa màn hình === */
+    .students-title {
+        /* === THAY ĐỔI: Thu nhỏ hơn nữa title === */
+        font-size: 1.1rem; /* Giảm từ 1.3rem xuống 1.1rem */
+        margin-bottom: 5px; /* Giảm margin từ 8px xuống 5px */
+    }
+
+    .student-item {
+        /* === THAY ĐỔI: Thu nhỏ hơn nữa font và padding === */
+        font-size: 0.95rem; /* Giảm từ 1.1rem xuống 0.95rem */
+        padding: 2px 4px; /* Giảm từ 3px 6px xuống 2px 4px - Cực kỳ compact */
+    }
+
+    .student-id {
+        /* === THAY ĐỔI: Thu nhỏ hơn nữa ID === */
+        min-width: 30px; /* Giảm từ 35px xuống 30px */
+        font-size: 0.9rem; /* Giảm từ 1rem xuống 0.9rem */
+    }
+
+    .student-name {
+        /* === THAY ĐỔI: Thu nhỏ font name === */
+        font-size: 0.95rem; /* Thêm font-size riêng cho name */
+    }
+
+    .student-group {
+        /* === THAY ĐỔI: Thu nhỏ hơn nữa Group === */
+        min-width: 45px; /* Giảm từ 55px xuống 45px */
+        font-size: 0.9rem; /* Giảm từ 1rem xuống 0.9rem */
+    }
+
+    /* === THAY ĐỔI: Thu nhỏ hơn nữa gap giữa các item === */
+    .students-list {
+        gap: 1px; /* Giảm từ 2px xuống 1px - Cực kỳ compact */
     }
 }
